@@ -26,8 +26,6 @@ async def RandomAgent(ctx):
         file = discord.File("Images/"+ (agentImage[x]), filename="image.png")
         embed.set_image(url="attachment://image.png")
         await ctx.send(file=file,embed = embed)
-     #   await ctx.send(file=discord.File('Valornt.jpg'))
-
-        
+         
 
 bot.run(token)
