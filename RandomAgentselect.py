@@ -7,7 +7,11 @@ intents =discord.Intents.all()
 intents.message_content = True #v2
 prefix = "!"
 bot = commands.Bot(command_prefix = prefix, intents=intents)
-token = 'MTA5NzIxNDU2ODA5MjE0NzcxMg.Gpvrqz.gIHd0gK9Ghbfx6odquVX0uPcY3gFklc3gasJwU'
+
+token = ''
+
+with open('token.txt', 'r') as file:
+    token = file.read().rstrip()
 
 Agents = ["Jett","Killjoy", "Sova", "Omen", "Gekko", "KAY/O", "Skye", "Viper", "Fade", "Cypher", "Phoenix", "Yoru", "Neon", "Raze", "Reyna", "Astra", "Harbor" ]
 agentImage =["Jett.png", "Killjoy.png", "Sova.png", "Omen.png", "Gekko.png", "KAYO.png", "Skye.png", "Viper.png", "Fade.png", "Cypher.png", " Phoenix.png", "Yoru.png", "Neon.png", "Raze.png", "Reyna.png", "Astra.png", "Harbor.png"]
@@ -27,5 +31,3 @@ async def RandomAgent(ctx):
         
 
 bot.run(token)
-
-
