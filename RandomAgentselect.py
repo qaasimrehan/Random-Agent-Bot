@@ -24,9 +24,9 @@ async def on_ready():
 
 @bot.command(pass_context = True)
 async def RandomCrosshair(ctx):
-        a = random.randint(0, 3)
-        embed = discord.Embed(title = "Random Crosshair", description = (Crosshair[a]), color = (0x4465a2))
-        file = discord.File("CrossHairs/"+ (Crosshair[a]), filename="image.png")
+        b = random.randint(0, 9)
+        embed = discord.Embed(title = "Random Crosshair", description = (Crosshair[b]), color = (0x4465a2))
+        file = discord.File("CrossHairs/"+ (Crosshairpic[b]), filename="image.png")
         embed.set_image(url="attachment://image.png")
         await ctx.send(file=file,embed = embed)
 
