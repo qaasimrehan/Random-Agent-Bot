@@ -15,7 +15,8 @@ with open('token.txt', 'r') as file:
 
 Agents = ["Jett","Killjoy", "Sova", "Omen", "Gekko", "KAY/O", "Skye", "Viper", "Fade", "Cypher", "Phoenix", "Yoru", "Neon", "Raze", "Reyna", "Astra", "Harbor" ]
 agentImage = ["Jett.png", "Killjoy.png", "Sova.png", "Omen.png", "Gekko.png", "KAYO.png", "Skye.png", "Viper.png", "Fade.png", "Cypher.png", "Phoenix.png", "Yoru.png", "Neon.png", "Raze.png", "Reyna.png", "Astra.png", "Harbor.png"]
-SideAffect = [""]
+SideAffect = ["Play With only Marshal for 4 rounds", "Only use Sidearms for the next round", "Increase your sens by 0.5", "Decrease your Sense by 0.5" ]
+Crosshair = [""]
 @bot.event
 async def on_ready():
     print("Agent select is ready")
@@ -41,5 +42,11 @@ async def RandomAgents(ctx, num):
             tempagentImages.pop(x)
             await ctx.send(file=file,embed = embed)
         
+@bot.command(pass_context = True)
+async def SideAffect(ctx):
+        s = random.randint(0, 16)
+        embed = discord.Embed(title = "Random Side Affect", description = (SideAffect[s]), color = (0xF85252))
+        embed.set_image(url="attachment://image.png")
+        await ctx.send(file=file,embed = embed)
 
 bot.run(token)
