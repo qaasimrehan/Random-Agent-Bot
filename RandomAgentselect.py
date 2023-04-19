@@ -22,16 +22,18 @@ async def on_ready():
     print("Agent select is ready")
 
 @bot.command(pass_context = True)
+async def SideAffect(ctx):
+        a = random.randint(0, 3)
+        embed = discord.Embed(title = "Random Side Affect", description = (sideAffect[a]), color = (0xF85252))
+        file = discord.File("Images/"+ (agentImage[a]), filename="image.png")
+        embed.set_image(url="attachment://image.png")
+        await ctx.send(file=file,embed = embed)
+
+@bot.command(pass_context = True)
 async def RandomAgent(ctx):
         x = random.randint(0, 16)
         embed = discord.Embed(title = "Random Agent", description = (Agents[x]), color = (0xF85252))
         file = discord.File("Images/"+ (agentImage[x]), filename="image.png")
-        embed.set_image(url="attachment://image.png")
-        await ctx.send(file=file,embed = embed)
-@bot.command(pass_context = True)
-async def SideAffect(ctx):
-        x = random.randint(0, 16)
-        embed = discord.Embed(title = "Random Side Affect", description = (sideAffect[x]), color = (0xF85252))
         embed.set_image(url="attachment://image.png")
         await ctx.send(file=file,embed = embed)
 
